@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E88E4BF236F6CFF00838701 /* ConvertCidrToSubnetMarkInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E88E4BE236F6CFF00838701 /* ConvertCidrToSubnetMarkInterfaceController.swift */; };
 		1EB9492A236F2850003024E1 /* Subnet IP Calculator for Apple Watch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1EB94929236F2850003024E1 /* Subnet IP Calculator for Apple Watch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1EB94930236F2850003024E1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EB9492E236F2850003024E1 /* Interface.storyboard */; };
 		1EB94932236F2853003024E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB94931236F2853003024E1 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E88E4BE236F6CFF00838701 /* ConvertCidrToSubnetMarkInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertCidrToSubnetMarkInterfaceController.swift; sourceTree = "<group>"; };
 		1EB94925236F2850003024E1 /* Subnet IP Calculator for Apple Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subnet IP Calculator for Apple Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB94929236F2850003024E1 /* Subnet IP Calculator for Apple Watch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Subnet IP Calculator for Apple Watch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EB9492F236F2850003024E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		1EB9493C236F2853003024E1 /* Subnet IP Calculator for Apple Watch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				1E88E4BE236F6CFF00838701 /* ConvertCidrToSubnetMarkInterfaceController.swift */,
 				1EB9493D236F2853003024E1 /* InterfaceController.swift */,
 				1EB9493F236F2853003024E1 /* ExtensionDelegate.swift */,
 				1EB94941236F2854003024E1 /* Assets.xcassets */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E88E4BF236F6CFF00838701 /* ConvertCidrToSubnetMarkInterfaceController.swift in Sources */,
 				1EB94940236F2853003024E1 /* ExtensionDelegate.swift in Sources */,
 				1EB9493E236F2853003024E1 /* InterfaceController.swift in Sources */,
 			);

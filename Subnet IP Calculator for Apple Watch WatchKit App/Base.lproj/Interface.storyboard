@@ -11,11 +11,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" userLabel="mainMenuController" customClass="InterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Subnet from CIDR" id="CEW-fH-16c">
-                            <connections>
-                                <segue destination="gnA-kF-EeK" kind="push" id="Vxj-t5-dm0"/>
-                            </connections>
-                        </button>
+                        <button width="1" alignment="left" title="Subnet from CIDR" id="CEW-fH-16c"/>
                         <button width="1" alignment="left" title="Find Network Hosts" id="ibx-bh-6oV"/>
                         <button width="1" alignment="left" title="Reserved for later..." enabled="NO" id="30G-Ap-rTz"/>
                         <button width="1" alignment="left" title="Reserved for later..." enabled="NO" id="stO-Iu-WhC"/>
@@ -24,16 +20,12 @@
             </objects>
             <point key="canvasLocation" x="34" y="31"/>
         </scene>
-        <!--subnetFromCIDRController-->
-        <scene sceneID="xwh-nH-uhX">
+        <!--Convert Cidr To Subnet Mark Interface Controller-->
+        <scene sceneID="ijI-11-dkt">
             <objects>
-                <controller title="Subnet from CIDR" id="gnA-kF-EeK" userLabel="subnetFromCIDRController">
-                    <items>
-                        <picker height="100" alignment="left" id="6fe-t7-FVI"/>
-                    </items>
-                </controller>
+                <controller id="yiw-LZ-GM2" customClass="ConvertCidrToSubnetMarkInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension"/>
             </objects>
-            <point key="canvasLocation" x="320" y="-88"/>
+            <point key="canvasLocation" x="328" y="-61"/>
         </scene>
     </scenes>
 </document>
