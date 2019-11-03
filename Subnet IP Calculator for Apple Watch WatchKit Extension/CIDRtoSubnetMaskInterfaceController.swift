@@ -30,23 +30,48 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
     
     @IBAction func calculateIsClicked() {
         //TODO
-        print(convertCIDRToBinary(value: pickerCurrentPos))
+        print(pickerCurrentPos)
+        convertCIDRToBinary(value: pickerCurrentPos)
+        print(quartette_1)
+        print(quartette_2)
+        print(quartette_3)
+        print(quartette_4)
     }
     
     // Converts the CIDR into Binary
-    func convertCIDRToBinary(value: Int) -> String {
-        var temp = ""
-        for _ in 1...value {
-            temp.append("1")
-        }
+    func convertCIDRToBinary(value: Int) {
+        let temp: Double = Double(value) / 8
         
-        let zeros = 32 - value
-        if (zeros != 0) {
-            for _ in 1...zeros {
-                temp.append("0")
+        print(temp)
+        if temp <= 1 {
+            for _ in 0...value{
+                quartette_1?.append("1")
             }
+            quartette_2 = "00000000"
+            quartette_3 = "00000000"
+            quartette_4 = "00000000"
+        } else if temp <= 2 && temp > 1 {
+            for _ in 9...value {
+                quartette_2?.append("1")
+            }
+            quartette_1 = "11111111"
+            quartette_3 = "00000000"
+            quartette_4 = "00000000"
+        } else if temp <= 3 && temp > 2 {
+            for _ in 17...value {
+                quartette_3?.append("1")
+            }
+            quartette_1 = "11111111"
+            quartette_2 = "11111111"
+            quartette_4 = "00000000"
+        } else {
+            for _ in 25...value {
+                quartette_4?.append("1")
+            }
+            quartette_1 = "11111111"
+            quartette_2 = "11111111"
+            quartette_3 = "11111111"
         }
-        return temp
     }
     
     func splitBinaryToQuartette(binrary: String) {
