@@ -13,6 +13,7 @@ import Foundation
 class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
 
     var cidr: Int?
+    var binaryArray: [String] = []
     var quartette_1: String?
     var quartette_2: String?
     var quartette_3: String?
@@ -30,23 +31,29 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
     
     @IBAction func calculateIsClicked() {
         //TODO
-        print(convertCIDRToBinary(value: pickerCurrentPos))
+        print(pickerCurrentPos)
+        convertCIDRToBinary(value: pickerCurrentPos)
+//        print(quartette_1)
+//        print(quartette_2)
+//        print(quartette_3)
+//        print(quartette_4)
+        print(binaryArray)
+        print(binaryArray.count)
+        binaryArray.removeAll(keepingCapacity: false)
     }
     
     // Converts the CIDR into Binary
-    func convertCIDRToBinary(value: Int) -> String {
-        var temp = ""
+    func convertCIDRToBinary(value: Int) {
         for _ in 1...value {
-            temp.append("1")
+            binaryArray.append("1")
         }
         
         let zeros = 32 - value
         if (zeros != 0) {
             for _ in 1...zeros {
-                temp.append("0")
+                binaryArray.append("0")
             }
         }
-        return temp
     }
     
     func splitBinaryToQuartette(binrary: String) {
