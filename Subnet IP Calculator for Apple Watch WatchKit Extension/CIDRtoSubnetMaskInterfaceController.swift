@@ -13,6 +13,7 @@ import Foundation
 class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
 
     var cidr: Int?
+    var binaryArray: [String] = []
     var quartette_1: String?
     var quartette_2: String?
     var quartette_3: String?
@@ -32,45 +33,26 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
         //TODO
         print(pickerCurrentPos)
         convertCIDRToBinary(value: pickerCurrentPos)
-        print(quartette_1)
-        print(quartette_2)
-        print(quartette_3)
-        print(quartette_4)
+//        print(quartette_1)
+//        print(quartette_2)
+//        print(quartette_3)
+//        print(quartette_4)
+        print(binaryArray)
+        print(binaryArray.count)
+        binaryArray.removeAll(keepingCapacity: false)
     }
     
     // Converts the CIDR into Binary
     func convertCIDRToBinary(value: Int) {
-        let temp: Double = Double(value) / 8
+        for _ in 1...value {
+            binaryArray.append("1")
+        }
         
-        print(temp)
-        if temp <= 1 {
-            for _ in 0...value{
-                quartette_1?.append("1")
+        let zeros = 32 - value
+        if (zeros != 0) {
+            for _ in 1...zeros {
+                binaryArray.append("0")
             }
-            quartette_2 = "00000000"
-            quartette_3 = "00000000"
-            quartette_4 = "00000000"
-        } else if temp <= 2 && temp > 1 {
-            for _ in 9...value {
-                quartette_2?.append("1")
-            }
-            quartette_1 = "11111111"
-            quartette_3 = "00000000"
-            quartette_4 = "00000000"
-        } else if temp <= 3 && temp > 2 {
-            for _ in 17...value {
-                quartette_3?.append("1")
-            }
-            quartette_1 = "11111111"
-            quartette_2 = "11111111"
-            quartette_4 = "00000000"
-        } else {
-            for _ in 25...value {
-                quartette_4?.append("1")
-            }
-            quartette_1 = "11111111"
-            quartette_2 = "11111111"
-            quartette_3 = "11111111"
         }
     }
     
