@@ -13,7 +13,7 @@
                     <items>
                         <button width="1" alignment="left" title="Subnet from CIDR" id="CEW-fH-16c">
                             <connections>
-                                <segue destination="gnA-kF-EeK" kind="push" id="Vxj-t5-dm0"/>
+                                <segue destination="yiw-LZ-GM2" kind="push" id="ZS6-YL-fGq"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Find Network Hosts" id="ibx-bh-6oV"/>
@@ -22,18 +22,29 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="34" y="31"/>
+            <point key="canvasLocation" x="37" y="33"/>
         </scene>
-        <!--subnetFromCIDRController-->
-        <scene sceneID="xwh-nH-uhX">
+        <!--Rto Subnet Mask Interface Controller-->
+        <scene sceneID="ijI-11-dkt">
             <objects>
-                <controller title="Subnet from CIDR" id="gnA-kF-EeK" userLabel="subnetFromCIDRController">
+                <controller id="yiw-LZ-GM2" customClass="CIDRtoSubnetMaskInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
                     <items>
-                        <picker height="100" alignment="left" id="6fe-t7-FVI"/>
+                        <picker height="77" alignment="left" focusStyle="stack" id="eXW-nk-gxz"/>
+                        <label width="1" alignment="center" text="Subnet Mask" textAlignment="center" id="NZx-46-1cL"/>
+                        <label width="1" alignment="center" text="???" textAlignment="center" id="6zs-Wg-qUe"/>
+                        <button width="1" alignment="left" title="Calculate" id="W7D-cC-Jk1">
+                            <connections>
+                                <action selector="calculateIsClicked" destination="yiw-LZ-GM2" id="Odm-I0-V3N"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="pickerValue" destination="eXW-nk-gxz" id="ktw-Fe-Z1S"/>
+                        <outlet property="subnetMaskLabel" destination="6zs-Wg-qUe" id="x6W-2C-a2w"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="320" y="-88"/>
+            <point key="canvasLocation" x="327.79487179487182" y="-61.461538461538467"/>
         </scene>
     </scenes>
 </document>
