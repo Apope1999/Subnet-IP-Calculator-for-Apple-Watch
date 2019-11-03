@@ -30,9 +30,28 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
     
     @IBAction func calculateIsClicked() {
         //TODO
-        print(pickerCurrentPos)
+        print(convertCIDRToBinary(value: pickerCurrentPos))
     }
     
+    // Converts the CIDR into Binary
+    func convertCIDRToBinary(value: Int) -> String {
+        var temp = ""
+        for _ in 1...value {
+            temp.append("1")
+        }
+        
+        let zeros = 32 - value
+        if (zeros != 0) {
+            for _ in 1...zeros {
+                temp.append("0")
+            }
+        }
+        return temp
+    }
+    
+    func splitBinaryToQuartette(binrary: String) {
+        // TODO
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
