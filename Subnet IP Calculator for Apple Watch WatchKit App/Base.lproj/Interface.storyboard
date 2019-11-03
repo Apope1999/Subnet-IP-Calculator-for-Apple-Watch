@@ -1,15 +1,39 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--mainMenuController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" userLabel="mainMenuController" customClass="InterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="Subnet from CIDR" id="CEW-fH-16c">
+                            <connections>
+                                <segue destination="gnA-kF-EeK" kind="push" id="Vxj-t5-dm0"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Find Network Hosts" id="ibx-bh-6oV"/>
+                        <button width="1" alignment="left" title="Reserved for later..." enabled="NO" id="30G-Ap-rTz"/>
+                        <button width="1" alignment="left" title="Reserved for later..." enabled="NO" id="stO-Iu-WhC"/>
+                    </items>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="34" y="31"/>
+        </scene>
+        <!--subnetFromCIDRController-->
+        <scene sceneID="xwh-nH-uhX">
+            <objects>
+                <controller title="Subnet from CIDR" id="gnA-kF-EeK" userLabel="subnetFromCIDRController">
+                    <items>
+                        <picker height="100" alignment="left" id="6fe-t7-FVI"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="320" y="-88"/>
         </scene>
     </scenes>
 </document>
