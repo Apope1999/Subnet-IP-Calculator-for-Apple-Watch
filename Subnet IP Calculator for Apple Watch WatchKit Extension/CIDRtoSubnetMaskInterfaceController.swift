@@ -33,13 +33,13 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
         //TODO
         print(pickerCurrentPos)
         convertCIDRToBinary(value: pickerCurrentPos)
-//        print(quartette_1)
-//        print(quartette_2)
-//        print(quartette_3)
-//        print(quartette_4)
-        print(binaryArray)
-        print(binaryArray.count)
+        splitBinaryToQuartette()
+        print(quartette_1)
+        print(quartette_2)
+        print(quartette_3)
+        print(quartette_4)
         binaryArray.removeAll(keepingCapacity: false)
+        resetQuartettes()
     }
     
     // Converts the CIDR into Binary
@@ -56,8 +56,30 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
         }
     }
     
-    func splitBinaryToQuartette(binrary: String) {
-        // TODO
+    func splitBinaryToQuartette() {
+        for x in 0...7 {
+            print(binaryArray[x])
+            quartette_1?.append(binaryArray[x])
+        }
+        
+        for x in 8...15 {
+            quartette_2?.append(binaryArray[x])
+        }
+        
+        for x in 16...23 {
+            quartette_3?.append(binaryArray[x])
+        }
+        
+        for x in 24...31 {
+            quartette_4?.append(binaryArray[x])
+        }
+    }
+    
+    func resetQuartettes() {
+        quartette_1 = ""
+        quartette_2 = ""
+        quartette_3 = ""
+        quartette_4 = ""
     }
     
     override func awake(withContext context: Any?) {
@@ -71,6 +93,9 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
             pickerItems.append(item)
         }
         pickerValue.setItems(pickerItems)
+        
+        //Initialize Quartette Strings
+        resetQuartettes()
     }
 
     override func willActivate() {
