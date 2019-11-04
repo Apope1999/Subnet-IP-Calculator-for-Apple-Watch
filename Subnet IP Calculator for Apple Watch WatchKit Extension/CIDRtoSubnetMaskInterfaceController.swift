@@ -30,14 +30,11 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
     @IBOutlet weak var subnetMaskLabel: WKInterfaceLabel!
     
     @IBAction func calculateIsClicked() {
-        //TODO
-        print(pickerCurrentPos)
         convertCIDRToBinary(value: pickerCurrentPos)
         splitBinaryToQuartette()
-        print(quartette_1)
-        print(quartette_2)
-        print(quartette_3)
-        print(quartette_4)
+        // Creates label for User Interface
+        let labelTextTemp: String = String(strtoul(quartette_1, nil, 2)) + "." + String(strtoul(quartette_2, nil, 2)) + "." + String(strtoul(quartette_3, nil, 2)) + "." + String(strtoul(quartette_4, nil, 2))
+        subnetMaskLabel.setText(labelTextTemp)
         binaryArray.removeAll(keepingCapacity: false)
         resetQuartettes()
     }
@@ -58,7 +55,6 @@ class CIDRtoSubnetMaskInterfaceController: WKInterfaceController {
     
     func splitBinaryToQuartette() {
         for x in 0...7 {
-            print(binaryArray[x])
             quartette_1?.append(binaryArray[x])
         }
         
