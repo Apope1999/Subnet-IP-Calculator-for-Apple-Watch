@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15505" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch42"/>
+    <device id="watch40"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15501"/>
@@ -57,9 +57,35 @@
         <!--Find NetworkIDS Interface Controller-->
         <scene sceneID="zBk-OG-mJe">
             <objects>
-                <controller id="C5X-qf-fYe" customClass="FindNetworkIDSInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension"/>
+                <controller id="C5X-qf-fYe" customClass="FindNetworkIDSInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Enter an IP address" id="BG7-C7-RfP"/>
+                        <group width="1" height="32" alignment="center" id="X3Y-jV-mCL">
+                            <items>
+                                <picker width="70" height="1" alignment="center" id="0sI-od-39S"/>
+                                <label alignment="center" verticalAlignment="bottom" text="." id="LhE-s8-J1d"/>
+                                <picker width="70" height="1" alignment="center" id="XL6-nO-kak"/>
+                            </items>
+                        </group>
+                        <group width="1" height="32" alignment="center" id="Alb-Ld-dRo">
+                            <items>
+                                <picker width="70" height="1" alignment="center" id="yuu-wT-lPN"/>
+                                <label alignment="center" verticalAlignment="bottom" text="." id="5le-DW-g7x"/>
+                                <picker width="70" height="1" alignment="center" id="Ulc-q6-EeN"/>
+                            </items>
+                        </group>
+                        <picker width="50" height="30" alignment="center" id="pv6-7z-Alg"/>
+                        <button width="1" alignment="left" title="Find all network IDs" id="9nM-xm-GuI"/>
+                    </items>
+                    <connections>
+                        <outlet property="pickerQuartetteFour" destination="Ulc-q6-EeN" id="Dd5-8X-iD8"/>
+                        <outlet property="pickerQuartetteOne" destination="0sI-od-39S" id="J49-fa-13z"/>
+                        <outlet property="pickerQuartetteThree" destination="yuu-wT-lPN" id="a89-P3-tnW"/>
+                        <outlet property="pickerQuartetteTwo" destination="XL6-nO-kak" id="27v-zA-trw"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="328" y="247"/>
+            <point key="canvasLocation" x="327.79487179487182" y="246.2820512820513"/>
         </scene>
     </scenes>
 </document>
