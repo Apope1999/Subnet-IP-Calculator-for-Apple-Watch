@@ -12,25 +12,38 @@ import Foundation
 
 class FindNetworkIDSInterfaceController: WKInterfaceController {
     
-    var pickerItems: [WKPickerItem] = []
+    var ipAddressValues: [WKPickerItem] = []
+    var cidrValues: [WKPickerItem] = []
+    
 
     @IBOutlet weak var pickerQuartetteOne: WKInterfacePicker!
     @IBOutlet weak var pickerQuartetteTwo: WKInterfacePicker!
     @IBOutlet weak var pickerQuartetteThree: WKInterfacePicker!
     @IBOutlet weak var pickerQuartetteFour: WKInterfacePicker!
+    @IBOutlet weak var pickerCIDR: WKInterfacePicker!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
         // Configure pickers
-        let pickerItem = WKPickerItem()
-        pickerItem.title = "255"
-        pickerItems.append(pickerItem)
-        pickerQuartetteOne.setItems(pickerItems)
-        pickerQuartetteTwo.setItems(pickerItems)
-        pickerQuartetteThree.setItems(pickerItems)
-        pickerQuartetteFour.setItems(pickerItems)
+        for x in 1...255 {
+            let pickerItem = WKPickerItem()
+            pickerItem.title = String(x)
+            ipAddressValues.append(pickerItem)
+        }
+        
+        for x in 1...32 {
+            let item = WKPickerItem()
+            item.title = "/" + String(x)
+            cidrValues.append(item)
+        }
+        
+        pickerCIDR.setItems(cidrValues)
+        pickerQuartetteOne.setItems(ipAddressValues)
+        pickerQuartetteTwo.setItems(ipAddressValues)
+        pickerQuartetteThree.setItems(ipAddressValues)
+        pickerQuartetteFour.setItems(ipAddressValues)
     }
 
     override func willActivate() {
