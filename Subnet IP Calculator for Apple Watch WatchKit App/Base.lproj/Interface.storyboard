@@ -75,7 +75,11 @@
                             </items>
                         </group>
                         <picker width="50" height="30" alignment="center" id="pv6-7z-Alg"/>
-                        <button width="1" alignment="left" title="Find all network IDs" id="9nM-xm-GuI"/>
+                        <button width="1" alignment="left" title="Find all network IDs" id="9nM-xm-GuI">
+                            <connections>
+                                <segue destination="0ek-ev-3BH" kind="push" id="bky-wC-FmB"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="pickerCIDR" destination="pv6-7z-Alg" id="2gf-jA-YAy"/>
@@ -87,6 +91,19 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="327.79487179487182" y="246.2820512820513"/>
+        </scene>
+        <!--Find NetworkI Ds Results Interface Controller-->
+        <scene sceneID="ieg-0G-Ytb">
+            <objects>
+                <controller id="0ek-ev-3BH" customClass="FindNetworkIDsResultsInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Network IDs:" id="9SR-R3-acf"/>
+                        <table alignment="left" id="PHb-Fe-6by"/>
+                        <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="0" id="iLo-iS-Smr"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="590" y="246"/>
         </scene>
     </scenes>
 </document>
