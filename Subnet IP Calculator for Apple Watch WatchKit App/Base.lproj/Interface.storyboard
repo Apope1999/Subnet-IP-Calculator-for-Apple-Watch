@@ -9,29 +9,32 @@
         <!--mainMenuController-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" userLabel="mainMenuController" customClass="MainMenuInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
+                <controller title="IP Calc" id="AgC-eL-Hgc" userLabel="mainMenuController" customClass="MainMenuInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
                     <items>
                         <button width="1" alignment="left" title="Subnet from CIDR" id="CEW-fH-16c">
                             <connections>
                                 <segue destination="yiw-LZ-GM2" kind="push" identifier="subnetToCIDR" id="g5k-rD-eqD"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Find Network IDs" id="ibx-bh-6oV">
+                        <button width="1" alignment="left" title="Find Network ID" id="ibx-bh-6oV">
                             <connections>
                                 <segue destination="C5X-qf-fYe" kind="push" identifier="findNetworkID" id="yFR-XL-OGn"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Reserved for later..." enabled="NO" id="30G-Ap-rTz"/>
-                        <button width="1" alignment="left" title="Reserved for later..." enabled="NO" id="stO-Iu-WhC"/>
+                        <button width="1" alignment="left" title="About" id="Aiw-ns-TdI">
+                            <connections>
+                                <segue destination="Kdy-k0-3df" kind="modal" id="wAK-vT-iKt"/>
+                            </connections>
+                        </button>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="0.0" y="-44"/>
+            <point key="canvasLocation" x="0.0" y="-44.441624365482227"/>
         </scene>
-        <!--Rto Subnet Mask Interface Controller-->
+        <!--CIDR -> Mask-->
         <scene sceneID="ijI-11-dkt">
             <objects>
-                <controller id="yiw-LZ-GM2" customClass="CIDRtoSubnetMaskInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
+                <controller title="CIDR -&gt; Mask" id="yiw-LZ-GM2" customClass="CIDRtoSubnetMaskInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
                     <items>
                         <picker height="77" alignment="left" focusStyle="stack" id="eXW-nk-gxz">
                             <connections>
@@ -52,7 +55,18 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="327.79487179487182" y="-61.461538461538467"/>
+            <point key="canvasLocation" x="324" y="-44"/>
+        </scene>
+        <!--Close-->
+        <scene sceneID="HxM-HY-jso">
+            <objects>
+                <controller title="Close" id="Kdy-k0-3df">
+                    <items>
+                        <label alignment="center" verticalAlignment="center" text="Made with ♥️ by Apostolos Pezodromou" textAlignment="center" numberOfLines="0" id="5BZ-vk-Sm7"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="303"/>
         </scene>
         <!--Find NetworkIDS Interface Controller-->
         <scene sceneID="zBk-OG-mJe">
@@ -62,20 +76,20 @@
                         <label alignment="center" text="Enter an IP address" id="BG7-C7-RfP"/>
                         <group width="1" height="32" alignment="center" id="X3Y-jV-mCL">
                             <items>
-                                <picker width="70" height="1" alignment="center" id="0sI-od-39S"/>
+                                <picker width="70" height="1" alignment="center" focusStyle="stack" id="0sI-od-39S"/>
                                 <label alignment="center" verticalAlignment="bottom" text="." id="LhE-s8-J1d"/>
-                                <picker width="70" height="1" alignment="center" id="XL6-nO-kak"/>
+                                <picker width="70" height="1" alignment="center" focusStyle="stack" id="XL6-nO-kak"/>
                             </items>
                         </group>
                         <group width="1" height="32" alignment="center" id="Alb-Ld-dRo">
                             <items>
-                                <picker width="70" height="1" alignment="center" id="yuu-wT-lPN"/>
+                                <picker width="70" height="1" alignment="center" focusStyle="stack" id="yuu-wT-lPN"/>
                                 <label alignment="center" verticalAlignment="bottom" text="." id="5le-DW-g7x"/>
-                                <picker width="70" height="1" alignment="center" id="Ulc-q6-EeN"/>
+                                <picker width="70" height="1" alignment="center" focusStyle="stack" id="Ulc-q6-EeN"/>
                             </items>
                         </group>
-                        <picker width="50" height="30" alignment="center" id="pv6-7z-Alg"/>
-                        <button width="1" alignment="left" title="Find all network IDs" id="9nM-xm-GuI">
+                        <picker width="50" height="30" alignment="center" focusStyle="stack" id="pv6-7z-Alg"/>
+                        <button width="1" alignment="left" title="Find Network ID" id="9nM-xm-GuI">
                             <connections>
                                 <segue destination="0ek-ev-3BH" kind="modal" id="bky-wC-FmB"/>
                             </connections>
@@ -90,20 +104,20 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="269" y="331"/>
+            <point key="canvasLocation" x="243" y="304"/>
         </scene>
         <!--Find NetworkI Ds Results Interface Controller-->
         <scene sceneID="ieg-0G-Ytb">
             <objects>
                 <controller id="0ek-ev-3BH" customClass="FindNetworkIDsResultsInterfaceController" customModule="Subnet_IP_Calculator_for_Apple_Watch_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Network IDs:" id="9SR-R3-acf"/>
+                        <label alignment="left" text="Network ID:" id="9SR-R3-acf"/>
                         <table alignment="left" id="PHb-Fe-6by"/>
                         <label width="1" alignment="left" text="Label" textAlignment="left" numberOfLines="0" id="iLo-iS-Smr"/>
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="569" y="331"/>
+            <point key="canvasLocation" x="541" y="304"/>
         </scene>
     </scenes>
 </document>

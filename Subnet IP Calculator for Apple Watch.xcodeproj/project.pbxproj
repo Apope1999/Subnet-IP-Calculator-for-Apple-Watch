@@ -19,6 +19,7 @@
 		1EB94942236F2854003024E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EB94941236F2854003024E1 /* Assets.xcassets */; };
 		1ECC9BC32374C6E100609F9D /* FindNetworkIDSInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ECC9BC22374C6E100609F9D /* FindNetworkIDSInterfaceController.swift */; };
 		1ED4977123754D4C0042D4BE /* FindNetworkIDsResultsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4977023754D4C0042D4BE /* FindNetworkIDsResultsInterfaceController.swift */; };
+		1EE9931C2434AABC00AFF316 /* NetworkIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE9931B2434AABC00AFF316 /* NetworkIDManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		1EB94943236F2854003024E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1ECC9BC22374C6E100609F9D /* FindNetworkIDSInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNetworkIDSInterfaceController.swift; sourceTree = "<group>"; };
 		1ED4977023754D4C0042D4BE /* FindNetworkIDsResultsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNetworkIDsResultsInterfaceController.swift; sourceTree = "<group>"; };
+		1EE9931B2434AABC00AFF316 /* NetworkIDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkIDManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				1E5991802433D8CD00E484F3 /* CIDRtoSubnetMaskManager.swift */,
+				1EE9931B2434AABC00AFF316 /* NetworkIDManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				1EB94940236F2853003024E1 /* ExtensionDelegate.swift in Sources */,
 				1E59917F2433D6DF00E484F3 /* MainMenuInterfaceController.swift in Sources */,
 				1E5991812433D8CD00E484F3 /* CIDRtoSubnetMaskManager.swift in Sources */,
+				1EE9931C2434AABC00AFF316 /* NetworkIDManager.swift in Sources */,
 				1EB9493E236F2853003024E1 /* InterfaceController.swift in Sources */,
 				1ED4977123754D4C0042D4BE /* FindNetworkIDsResultsInterfaceController.swift in Sources */,
 				1ECC9BC32374C6E100609F9D /* FindNetworkIDSInterfaceController.swift in Sources */,

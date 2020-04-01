@@ -14,6 +14,7 @@ class FindNetworkIDSInterfaceController: WKInterfaceController {
     
     var ipAddressValues: [WKPickerItem] = []
     var cidrValues: [WKPickerItem] = []
+    var manager = NetworkIDManager()
     
 
     @IBOutlet weak var pickerQuartetteOne: WKInterfacePicker!
@@ -44,6 +45,12 @@ class FindNetworkIDSInterfaceController: WKInterfaceController {
         pickerQuartetteTwo.setItems(ipAddressValues)
         pickerQuartetteThree.setItems(ipAddressValues)
         pickerQuartetteFour.setItems(ipAddressValues)
+        
+        // 128.42.5.4
+        manager.initializeIpSeagment(ipScetion: 128)
+        manager.initializeIpSeagment(ipScetion: 42)
+        manager.initializeIpSeagment(ipScetion: 5)
+        manager.initializeIpSeagment(ipScetion: 4)
     }
 
     override func willActivate() {

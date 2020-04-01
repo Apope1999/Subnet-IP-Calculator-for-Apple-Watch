@@ -59,6 +59,7 @@ struct CIDRtoSubnetMaskManager {
         return subnetMask
     }
     
+    
     mutating func reset() {
         quartette_1 = ""
         quartette_2 = ""
